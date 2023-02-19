@@ -4,14 +4,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class TennisCoach implements Coach
+public class TennisCoachSetterInjection implements Coach
 {
+  @Autowired
   FortuneService fortuneService;
   
-  @Autowired
-  public TennisCoach(FortuneService fortuneService)
+  // define default constructor
+  public TennisCoachSetterInjection()
   {
-    this.fortuneService = fortuneService;
+    System.out.println("TennisCoachSetterInjection: inside default instructor");
   }
 
   @Override
